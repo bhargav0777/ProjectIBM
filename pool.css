@@ -1,0 +1,12 @@
+#leftHalf {
+   background-color: white;
+}
+
+#rightHalf{
+    background-color: rgb(244, 244, 244);
+   
+}
+
+#submitBtn{
+    float: right;
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Cabs</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link href="./pool.css" rel = "stylesheet">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlRDbQbnEm0PWYiS0H5r3hxIAg5FP5kYU&libraries=places"></script>
+</head>
+<body>
+</head>
+<body onload="initMap()">
+    <div class = container-fluid>
+    <div class = "row">
+
+    <div class = "col-md-6" id = "leftHalf">
+    <h1 class="text-center">Enter Journey Details</h1>
+    <br><br>
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Source Location" id="source">
+        </div>
+        <br>
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Destination Location" id="Destination">
+        </div>
+        <br>
+        <div class="form-floating">
+            <select class="form-select" id="floatingSelectDisabled">
+              <option selected>No. of passengers you can accommodate</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+
+            </select>
+            <label>No. of passengers you can accommodate</label>
+        </div><br>
+        <div>
+            <p>Schedule your Journey</p>
+            <input type="date" id="dateInput" name="dateInput">
+            <input type="time" id="timeInput" name="timeInput">
+         </div>
+        <br>
+    </div>
+    <div class = "col-md-6 text-center" id = "rightHalf">
+        <h1>Enter Vehicle Details</h1><br><br>
+        <div class = "form-group">
+        <input type="text" class="form-control" placeholder="Vehicle number" id="Destination">
+        </div><br>
+        <div class = "form-group">
+            <input type="text" class="form-control" placeholder="Vehicle model" id="Destination">
+        </div><br>
+        <p>OR</p>
+        <div class="form-floating">
+            <select class="form-select" id="vehicleDetails">
+              <option selected>Choose from existing vehicles</option>
+              <option value="1">21071A05</option>
+              <option value="2">21071A06</option>
+              <option value="3">21071A07</option>
+            </select>
+            <label>No. of passengers you can accommodate</label>
+        </div><br>
+        <button class="btn btn-primary" id="submitBtn">Submit </button>
+        <br>
+    </div>
+        <div id="map" style="height: 500px;width:100%;"></div>
+        <br>
+   </div>
+</div>
+    
+    
+    
+</body>
+<script>
+    let map,directionsService,directionsRenderer,sourceAutocomplete,desAutocomplete
+    function initMap() {
+        map=new google.maps.Map(document.getElementById('map'),{center:{lat:17.5202,lng:78.3964},zoom:13})
+        google.maps.event.addListener(map,"click",function(event){this.setOptions({scrollwheel:true})})
+        directionsService=new google.maps.directionsService()
+        directionsRenderer=new google.maps.DirectionsRenderer();
+        directionsRenderer.setMap(map)
+        
+        sourceAutocomplete=new google.maps.places.Autocompete(document.getElementById('source'))
+        desAutocomplete=new google.maps.places.Autocomplere(document.getElementById('dest'))
+        
+    }
+</script>
+
+    
+</body>
+</html>
