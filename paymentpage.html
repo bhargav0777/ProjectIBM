@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <link rel="stylesheet" type="text/css" href="./paymentpage.css">
+    <style>
+    h1 {
+    text-align: center;
+    }
+    </style>
+</head>
+<body>
+    <h1><strong>Payment Page</strong></h1>
+    <div id="backgroundImage"></div>
+    <form id="paymentForm">
+        <div class="form-field">
+            <label for="cardNumber">Card Number:</label>
+            <input type="text" id="cardNumber" name="cardNumber" maxlength="16" required><br>
+        </div>
+        <div class="form-field">
+            <label for="cardHolderName">Card Holder Name:</label>
+            <input type="text" id="cardHolderName" name="cardHolderName" required><br>
+        </div>
+        <div class="form-field">
+        <label for="expiryMonth">Expiry Month:</label>
+        <input type="text" id="expiryMonth" name="expiryMonth" maxlength="2" required>
+        </div>
+        <div class="form-field">
+        <label for="expiryYear">Expiry Year:</label>
+        <input type="text" id="expiryYear" name="expiryYear" maxlength="4" required><br>
+        </div>
+        <div class="form-field">
+        <label for="cvv">CVV:</label>
+        <input type="text" id="cvv" name="cvv" maxlength="4" required><br>
+        </div>
+        <div class="form-field">
+        <input type="submit" value="Make Payment">
+        </div>
+    </form>
+
+    <script>
+        document.getElementById("paymentForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            // In a real scenario, you would handle the payment processing here
+            // using a payment gateway and secure backend server.
+            // For this example, we'll simply simulate a successful payment:
+            alert("Payment Successful!");
+            // You can add additional logic here to redirect to a success page or update the UI accordingly.
+        });
+    </script>
+</body>
+</html>
