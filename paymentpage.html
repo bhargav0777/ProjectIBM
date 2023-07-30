@@ -1,54 +1,58 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payment Page</title>
-    <link rel="stylesheet" type="text/css" href="./paymentpage.css">
-    <style>
-    h1 {
-    text-align: center;
-    }
-    </style>
-</head>
-<body>
-    <h1><strong>Payment Page</strong></h1>
-    <div id="backgroundImage"></div>
-    <form id="paymentForm">
-        <div class="form-field">
-            <label for="cardNumber">Card Number:</label>
-            <input type="text" id="cardNumber" name="cardNumber" maxlength="16" required><br>
-        </div>
-        <div class="form-field">
-            <label for="cardHolderName">Card Holder Name:</label>
-            <input type="text" id="cardHolderName" name="cardHolderName" required><br>
-        </div>
-        <div class="form-field">
-        <label for="expiryMonth">Expiry Month:</label>
-        <input type="text" id="expiryMonth" name="expiryMonth" maxlength="2" required>
-        </div>
-        <div class="form-field">
-        <label for="expiryYear">Expiry Year:</label>
-        <input type="text" id="expiryYear" name="expiryYear" maxlength="4" required><br>
-        </div>
-        <div class="form-field">
-        <label for="cvv">CVV:</label>
-        <input type="text" id="cvv" name="cvv" maxlength="4" required><br>
-        </div>
-        <div class="form-field">
-        <input type="submit" value="Make Payment">
-        </div>
-    </form>
+<html lang="en">
 
-    <script>
-        document.getElementById("paymentForm").addEventListener("submit", function(event) {
-            event.preventDefault();
-            // In a real scenario, you would handle the payment processing here
-            // using a payment gateway and secure backend server.
-            // For this example, we'll simply simulate a successful payment:
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Form</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./paymentpage.css"> <link rel="shortcut icon" href="./images/360_F_418015405_gym5TXugGl1D90UTf9wmb86n9JuddmkA.jpg" type="image/x-icon">
+</head>
+
+<body>
+  <div class="container" id="paymentForm">
+    <div class="row justify-content-center align-items-center vh-100">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header bg-primary text-white">
+            <h4 class="mb-0">Payment Details</h4>
+          </div>
+          <div class="card-body">
+            <form id="paymentForm">
+              <div class="mb-3">
+                <label for="cardHolder" class="form-label">Card Holder's Name</label>
+                <input type="text" class="form-control" id="cardHolder" required>
+              </div>
+              <div class="mb-3">
+                <label for="cardNumber" class="form-label">Card Number</label>
+                <input type="text" class="form-control" id="cardNumber" required>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="expiryDate" class="form-label">Expiry Date</label>
+                  <input type="text" class="form-control" id="expiryDate" placeholder="MM/YY" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="cvv" class="form-label">CVV</label>
+                  <input type="text" class="form-control" id="cvv" required>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary">Pay Now</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    document.getElementById("paymentForm").addEventListener("submit", function(event) {
+        event.preventDefault();
             alert("Payment Successful!");
-            // You can add additional logic here to redirect to a success page or update the UI accordingly.
-        });
-    </script>
+      
+    });
+</script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+ 
 </body>
+
 </html>

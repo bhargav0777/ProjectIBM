@@ -21,6 +21,7 @@
     z-index: 1;
     color: aliceblue;
 }
+
     </style>
    
     
@@ -38,13 +39,15 @@
             <input type="text" class="form-control" placeholder="Destination Location" id="Destination">
         </div>
         <br>
-        <button class="btn btn-primary">Get Ride
+       <a href="./paymentpage.html"><button type="button" class="btn btn-primary">Ride</button></a> 
+        
 
         </button>
         <br><br>
         <div ></div>
         <br>
     </div>
+
     
     
     
@@ -58,8 +61,8 @@
         directionsRenderer=new google.maps.DirectionsRenderer();
         directionsRenderer.setMap(map)
         
-        sourceAutocomplete=new google.maps.places.Autocompete(document.getElementById('source'))
-        desAutocomplete=new google.maps.places.Autocomplere(document.getElementById('dest'))
+        sourceAutocomplete=new google.maps.places.Autocomplete(document.getElementById('source'))
+        desAutocomplete=new google.maps.places.Autocomplete(document.getElementById('dest'))
         
     }
 </script>
